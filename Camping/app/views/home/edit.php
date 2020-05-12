@@ -48,8 +48,17 @@
         <div class = 'form-group'>
           <label>Availability: 
             <select name="availability">
-              <option selected="selected" value="not occupied">Not Occupied</option>
-              <option value="occupied">Occupied</option>
+              <?php
+                var_dump($data->availability);
+                if($data->availability == 'not occupied'){
+                  echo "<option selected='selected' value='not occupied'>Not Occupied</option>
+                        <option value='occupied'>Occupied</option>";
+                }
+                else{
+                  echo "<option selected='selected' value='occupied'>Occupied</option>
+                        <option value='not occupied'>Not Occupied</option>";
+                }
+              ?>
             </select>
           </label>
         </div>

@@ -7,7 +7,7 @@
 				if($theUser != null && password_verify($_POST['password'], $theUser->password_hash)){
 					$_SESSION['user_id'] = $theUser->user_id;
 					$_SESSION['role'] = $theUser->role;
-					header('location:/Camping/product/index');
+					header('location:/Camping/home/index');
 				}
 				else{
 					$this->view('login/index', 'Incorrect username/password combination!');

@@ -16,6 +16,7 @@
     <h1>List of Items</h1>
       <a href="/Camping/login/logout">Log out</a>
       
+      <a href="/Camping/product/index" class="btn btn-info" style="float: right;">Products</a>
       </br>
       </br>
 
