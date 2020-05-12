@@ -21,6 +21,9 @@
 
     	<a href="/Camping/home/create" class="btn btn-success">Add an item</a>
 
+      <a href="/Camping/home/index" class="btn btn-success">All spots</a>
+      <a href="/Camping/home/freeSpot" class="btn btn-success">Unoccupied spots</a>
+      <a href="/Camping/home/occupiedSpot" class="btn btn-success">Occupied spots</a>
       </br>
       </br>
 

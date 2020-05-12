@@ -9,6 +9,22 @@
 			return $stmt->fetchAll();
 		}
 
+		public function getFreeSpot(){
+			$SQL = "SELECT * FROM Camping_spot INNER JOIN campground ON Camping_spot.campground_id = campground.campground_id WHERE availability = 'not occupied' ";
+			$stmt = self::$_connection->prepare($SQL);
+			$stmt->execute();
+			$stmt->setFetchMode(PDO::FETCH_CLASS, 'Camping_spot');
+			return $stmt->fetchAll();
+		}
+
+		public function getOccupiedSpot(){
+			$SQL = "SELECT * FROM Camping_spot INNER JOIN campground ON Camping_spot.campground_id = campground.campground_id WHERE availability = 'occupied' ";
+			$stmt = self::$_connection->prepare($SQL);
+			$stmt->execute();
+			$stmt->setFetchMode(PDO::FETCH_CLASS, 'Camping_spot');
+			return $stmt->fetchAll();
+		}
+
 		public function create(){
 			$SQL = 'INSERT INTO camping_spot(campground_id,description,image,price,availability,spot_number) VALUE(:campground_id, :description, :image, :price, :availability, :spot_number)';
 			$stmt = self::$_connection->prepare($SQL);

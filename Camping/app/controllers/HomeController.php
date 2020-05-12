@@ -12,6 +12,18 @@
 			$this->view('home/index', ['items'=>$items]);
 		}
 
+		public function freeSpot(){
+			$items = $this->model('Camping_spot')->getFreeSpot();
+
+			$this->view('home/index', ['items'=>$items]);
+		}
+
+		public function occupiedSpot(){
+			$items = $this->model('Camping_spot')->getOccupiedSpot();
+
+			$this->view('home/index', ['items'=>$items]);
+		}
+
 		public function create(){
 			if(isset($_FILES['newPicture']) && $_FILES['newPicture']['error'] == UPLOAD_ERR_OK){
 				$info = getimagesize($_FILES['newPicture']['tmp_name']);
