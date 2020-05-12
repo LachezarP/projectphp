@@ -9,14 +9,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>List of Items</title>
+    <title>List of Camping Spots</title>
   </head>
   <body>
   	<div class='container'>
-    <h1>List of Items</h1>
+    <h1>List of Camping Spots</h1>
       <a href="/Camping/login/logout">Log out</a>
       
       <a href="/Camping/product/index" class="btn btn-info" style="float: right;">Products</a>
+      
+      <a href="/Camping/orders/index" class="btn btn-info" style="float: right;">Orders</a>
       </br>
       </br>
 

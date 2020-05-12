@@ -1,5 +1,10 @@
 <?php
 	class Product extends Model{
+		var $inventory_id;
+		var $name;
+		var $price;
+		var $description;
+		var $availability;
 
 		public function get(){
 			$SQL = 'SELECT * FROM Product INNER JOIN inventory ON Product.inventory_id = inventory.inventory_id';

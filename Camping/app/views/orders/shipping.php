@@ -9,35 +9,28 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>List of Products</title>
+    <title>Shipping Confirmation</title>
   </head>
   <body>
-  	<div class='container'>
-    <h1>List of Products</h1>
-      <a href="/Camping/login/logout">Log out</a>
-      
-      <a href="/Camping/home/index" class="btn btn-info" style="float: right;">Camping Spots</a>
+    <div class='container'>
+    <h1>Shipping Confirmation</h1>
 
-      </br>
-      </br>
+      <table class="table table-striped">
+        <tr><td>Item Name</td><td>Quantity</td><td>Price</td><td>Status</td><td>Date</td><td>Actions</td></tr>
+         <?php
 
-    	<a href="/Camping/product/create" class="btn btn-success">Add a Product</a>
-
-      </br>
-      </br>
-			<table class="table table-striped">
-				<tr><td>Name</td><td>qty</td><td>Price</td><td>Actions</td></tr>
-        <?php
-          
-          foreach($data['products'] as $item){
-            echo "<tr><td>$item->name</td><td>$item->qty</td><td>$item->price</td><td>
-            <a href = '/Camping/product/detail/$item->product_id' class='btn btn-primary'>Details</a>
-            <a href = '/Camping/product/edit/$item->product_id' class='btn btn-success'>Edit</a>
-            <a href = '/Camping/product/delete/$item->product_id' class='btn btn-danger'>Delete</a>
+          foreach($data['orders'] as $item){
+            $order_id = $item->order_id;
+            echo "<tr><td>$item->name</td><td>$item->qty</td><td>$item->price</td><td>$item->order_status</td><td>$item->date</td><td>
             </td></tr>";
           }
         ?>
-	</table>
+      </table>
+
+    <a href="/Camping/orders/index" class="btn btn-danger" style="float: right; margin: 5px;">Cancel</a>
+
+    <a href="/Camping/orders/setAsShipped/<?=$order_id ?>" class="btn btn-success" style="float: right; margin: 5px;">Confirm</a>
+
     </div>
 
     <!-- Optional JavaScript -->

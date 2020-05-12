@@ -1,5 +1,11 @@
 <?php
 	class Camping_spot extends Model{
+		var $campground_id;
+		var $description;
+		var $image;
+		var $price;
+		var $availability;
+		var $spot_number;
 
 		public function get(){
 			$SQL = 'SELECT * FROM Camping_spot INNER JOIN campground ON Camping_spot.campground_id = campground.campground_id';
