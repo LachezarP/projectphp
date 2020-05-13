@@ -12,7 +12,8 @@
     <title>Product Details</title>
   </head>
   <body>
-  	<div class='container'>
+    <div style="background-image: url('../../images/camp6.jpg');height: 1000px;">
+    <div class='container' style="height: 1000px; background-color: white; ">
     <h1>Product Details</h1>
     	<dl>
     		<dt>Shelf Location:</dt>
@@ -33,6 +34,7 @@
         </dl>
 		<a href="/Camping/product/index" class="btn btn-secondary">Back to list</a>
     </div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

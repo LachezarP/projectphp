@@ -11,11 +11,17 @@
 
     <title>List of Camping Spots</title>
   </head>
+ <!--  <style>
+    body {
+        background-image: url('../images/background.jpg');
+    }
+  </style> -->
   <body>
-  	<div class='container'>
+    <div style="background-image: url('../images/background.jpg');height: 1000px;">
+  	<div class='container' style="background-color: white; align-content: center;height: 1000px">
     <h1>List of Camping Spots</h1>
       <a href="/Camping/login/logout">Log out</a>
-
+      <a href="/Camping/product/index" class="btn btn-info" style="float: right;">Products</a>
       </br>
       </br>
 
@@ -41,6 +47,7 @@
 				?>
 	</table>
     </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

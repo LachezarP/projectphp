@@ -12,7 +12,8 @@
     <title>Delete product</title>
   </head>
   <body>
-  	<div class='container'>
+  <div style="background-image: url('../../images/camp6.jpg');height: 100%;width: 100%;">
+    <div class='container' style="height: 1000px; background-color: white;">
     	<h1>Delete product</h1>
     	<form action='' method="post">
 
@@ -38,6 +39,7 @@
 				<a href="/Camping/product/index" class="btn btn-secondary">Cancel</a>
 		</form>
     </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -12,7 +12,8 @@
     <title>List of Products</title>
   </head>
   <body>
-  	<div class='container'>
+    <div style="background-image: url('../images/camp6.jpg');height: 1000px;">
+  	<div class='container' style="height: 1000px; background-color: white;">
     <h1>List of Products</h1>
       <a href="/Camping/login/logout">Log out</a>
       
