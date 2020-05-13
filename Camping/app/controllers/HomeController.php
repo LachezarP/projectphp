@@ -4,7 +4,7 @@
 */
 	class HomeController extends Controller{
 /**
-	@accessFilter:{}
+	@accessFilter:{AdminFilter}
 */
 		public function index(){
 			$items = $this->model('Camping_spot')->get();
@@ -164,6 +164,8 @@
 				$this->view('home/delete', $theCampingSpot);
 			}
 		}
+
+
 	}
 	
 ?>

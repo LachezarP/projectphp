@@ -20,8 +20,8 @@
 		}
 
 		public static function AdminFilter($params){
-			if($_SESSION['role'] !== 'employee'){
-				return '/Camping/User/index';
+			if($_SESSION['role'] == 'user'){
+				return '/Camping/camping_spot/index';
 			}
 			else{
 				return false;
