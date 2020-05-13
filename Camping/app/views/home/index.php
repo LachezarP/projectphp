@@ -16,6 +16,8 @@
     <h1>List of Camping Spots</h1>
       <a href="/Camping/login/logout">Log out</a>
       
+      <a href="/Camping/camping_spot/requests" class="btn btn-info" style="float: right; margin: 5px;">Requests</a>
+
       <a href="/Camping/product/index" class="btn btn-info" style="float: right; margin: 5px;">Products</a>
       
       <a href="/Camping/orders/index" class="btn btn-info" style="float: right; margin: 5px;">Orders</a>

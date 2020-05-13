@@ -34,5 +34,52 @@
 				$this->view('camping_spot/request');
 			}
 		}
+
+		public function requests(){
+			$requests = $this->model('Request')->get();
+
+			$this->view('camping_spot/requests', ['requests'=>$requests]);
+		}
+
+		public function accept($request_id){
+			$theRequest = $this->model('Request')->find($request_id);
+			$theCampingSpot = $this->model('Camping_spot')->find($theRequest->camp_spot_id);
+
+			var_dump($theCampingSpot);
+
+			$theRequest->request_status = 'Accepted';
+			$theCampingSpot->availability = 'occupied';
+			$theCampingSpot->update();
+			$theRequest->update();
+
+
+			header('location:/Camping/camping_spot/requests');
+		}
+
+		public function reject($request_id){
+			$theRequest = $this->model('Request')->find($request_id);
+			$theCampingSpot = $this->model('Camping_spot')->find($theRequest->camp_spot_id);
+
+			var_dump($theCampingSpot);
+
+			$theRequest->request_status = 'Rejected';
+			$theCampingSpot->availability = 'not occupied';
+			$theCampingSpot->update();
+			$theRequest->update();
+
+
+			header('location:/Camping/camping_spot/requests');
+		}
+
+		public function delete($request_id){
+			$theRequest = $this->model('Request')->find($request_id);
+			$theCampingSpot = $this->model('Camping_spot')->find($theRequest->camp_spot_id);
+
+			$theCampingSpot->availability = 'not occupied';
+			$theCampingSpot->update();
+			$theRequest->delete();
+
+			header('location:/Camping/camping_spot/requests');
+		}
 	}
 ?>
