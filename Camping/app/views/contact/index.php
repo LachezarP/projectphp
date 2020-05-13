@@ -9,28 +9,29 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Sales</title>
+    <title>List of Contacts</title>
   </head>
   <body>
-  	<div class='container'>
-    <h1>Sales</h1>
+    <div class='container'>
+    <h1>List of Contacts</h1>
       <a href="/Camping/login/logout">Log out</a>
       
       <a href="/Camping/home/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
-      <a href="/Camping/orders/index" class="btn btn-info" style="float: right; margin: 5px;">Orders</a>
+      
+      </br>
+      </br>
 
-      </br>
-      </br>
-			<table class="table table-striped">
-				<tr><td>Name</td><td>Quantity</td><td>Price</td><td>Status</td><td>Date</td></tr>
-        <?php
-          
-          foreach($data['products'] as $item){
-            echo "<tr><td>$item->name</td><td>$item->qty</td><td>$item->price</td><td>$item->order_status</td><td>$item->date
+      <table class="table table-striped">
+        <tr><td>Username</td><td>First Name</td><td>Last Name</td><td>Phone Number</td><td>Email</td><td>Actions</td></tr>
+         <?php
+
+          foreach($data['contacts'] as $item){
+            echo "<tr><td>$item->username</td><td>$item->first_name</td><td>$item->last_name</td><td>$item->phone_number</td><td>$item->email</td><td>
+            <a href = '/Camping/contact/contact_info/$item->user_id' class='btn btn-primary'>Detail</a>
             </td></tr>";
           }
         ?>
-	</table>
+  </table>
     </div>
 
     <!-- Optional JavaScript -->

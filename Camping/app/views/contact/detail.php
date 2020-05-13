@@ -9,28 +9,44 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Sales</title>
+    <title>Contact Details</title>
   </head>
   <body>
   	<div class='container'>
-    <h1>Sales</h1>
-      <a href="/Camping/login/logout">Log out</a>
-      
-      <a href="/Camping/home/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
-      <a href="/Camping/orders/index" class="btn btn-info" style="float: right; margin: 5px;">Orders</a>
+    <h1>Contact Details</h1>
+    	<dl>
 
-      </br>
-      </br>
-			<table class="table table-striped">
-				<tr><td>Name</td><td>Quantity</td><td>Price</td><td>Status</td><td>Date</td></tr>
-        <?php
-          
-          foreach($data['products'] as $item){
-            echo "<tr><td>$item->name</td><td>$item->qty</td><td>$item->price</td><td>$item->order_status</td><td>$item->date
-            </td></tr>";
-          }
-        ?>
-	</table>
+		<dt>Username:</dt>
+	    <dd><?=$data->username ?></dd>
+
+        <dt>First Name:</dt>
+        <dd><?=$data->first_name ?></dd>
+
+        <dt>Last Name:</dt>
+        <dd><?=$data->last_name ?></dd>
+		
+        <dt>Phone Number:</dt>
+        <dd><?=$data->phone_number ?></dd>
+
+        <dt>Email:</dt>
+        <dd><?=$data->email ?></dd>
+
+        <dt>Country:</dt>
+        <dd><?=$data->country ?></dd>
+
+        <dt>City:</dt>
+        <dd><?=$data->city ?></dd>
+
+        <dt>Street:</dt>
+        <dd><?=$data->street ?></dd>
+
+        <dt>Postal Code:</dt>
+        <dd><?=$data->postal_code ?></dd>
+
+        <dt>province:</dt>
+        <dd><?=$data->province ?></dd>
+    </dl>
+		<a href="/Camping/contact/index" class="btn btn-secondary">Back to list</a>
     </div>
 
     <!-- Optional JavaScript -->
