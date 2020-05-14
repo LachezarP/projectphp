@@ -18,15 +18,19 @@
       <a href="/Camping/product/catalog">Back to the catalog</a>
 
 			<table class="table table-striped">
-				<tr><th>Name</th><th>Quantity</th><th>Unit Price</th><th>Actions</th></tr>
+				<tr><th>Name</th><th>Quantity</th><th>Unit Price</th><th>Total Price</th><th>Actions</th></tr>
 			   <?php
+         $sum = 0;
 					foreach($data as $item){
-						echo "<tr><td>$item->name</td><td>$item->qty</td><td>$item->price</td><td>
+						echo "<tr><td>$item->name</td><td>$item->qty</td><td>$item->price</td><td>". $item->qty*$item->price ,"</td><td>
 						<a href = '/Camping/product/productdetail/$item->product_id' class='btn btn-primary'>Details</a>
             <a href = '/Camping/product/removeFromCart/$item->order_items_id' class='btn btn-danger'>x</a>
 						</td></tr>";
+
+            $sum += $item->qty*$item->price;
 					}
 				?>
+        <tr><th colspan="3">Subtotal</th><th><?= $sum ?></th><th><a href = '/Camping/product/checkout/' class='btn btn-success'>Checkout my cart</a></th></tr>
 	</table>
     </div>
 

@@ -106,6 +106,13 @@
 				$this->view('product/cart', $items);
 			}
 			else{
+				$cart = $this->model('Orders');
+				$cart->user_id = $_SESSION['user_id'];
+				$cart->date = date('Y/m/d');
+				$cart->order_status = 'cart';
+				$cart->order_total = 0;
+				$cart->order_id = $cart->create();
+
 				$this->view('product/cart');
 			}
 		}
@@ -121,6 +128,15 @@
 				$item->delete();
 			}
 			header('location:/Camping/product/viewCart');
+		}
+
+		public function checkout(){
+			$cart = $this->model('Orders')->findUserCart($_SESSION['user_id']);
+
+			$cart->order_status = 'paid';
+			$cart->update();
+
+			header('location:/Camping/product/catalog');
 		}
 	}
 ?>

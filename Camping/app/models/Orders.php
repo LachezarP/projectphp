@@ -33,8 +33,7 @@
 			$SQL = 'INSERT INTO Orders(user_id,date,order_status,order_total) VALUE(:user_id, :date,:order_status,:order_total)';
 			$stmt = self::$_connection->prepare($SQL);
 			$stmt->execute(['user_id'=>$this->user_id,'date'=>$this->date,'order_status'=>$this->order_status,'order_total'=>$this->order_total]);
-			$this->order_id = self::$_connection->lastInsertId();
-			return $stmt->rowCount();
+			return $this->order_id = self::$_connection->lastInsertId();
 		}
 
 		public function update(){
