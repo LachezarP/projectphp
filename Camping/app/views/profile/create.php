@@ -9,52 +9,43 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Create a Product</title>
+    <title>Create a Contact</title>
   </head>
 
   <body>
-  <div style="background-image: url('../../images/camp6.jpg');height: 1000px;">
+  <div style="background-image: url('../images/camp6.jpg');height: 1000px;">
     <div class='container' style="height: 1000px; background-color: white;">
-    	<h1>Create a Product</h1>
+    	<h1>Create a Contact</h1>
       
 	    <form action='' method="post">
 
 	    	<div class = 'form-group'>
-          <label>Inventory Id: <input type="text" name="inventory_id"
+          <label>First Name: <input type="text" name="first_name"
             class = 'form-control'>
           </label>
         </div>
 
         <div class = 'form-group'>
-          <label>Name: <input type="text" name="name"
+          <label>Last Name: <input type="text" name="last_name"
             class = 'form-control'>
           </label>
         </div>  
 
         <div class = 'form-group'>
-          <label>Price: <input type="text" name="price"
+          <label>Phone Number: <input type="Number" name="phone_number"
             class = 'form-control'>
           </label>
         </div>  
 
         <div class = 'form-group'>
-          <label>Description: <textarea name="description" class = 'form-control'></textarea>
+          <label>Email: <input type="text" name="email"
+            class = 'form-control'>
           </label>
         </div> 
 
-        <div class = 'form-group'>
-          <label>Availability: 
-            <select name="availability">
-              <option value="available">available</option>
-              <option value="not available">Not available</option>
-            </select>
-          </label>
-        </div>      
-
-
 			<input type="submit" name="action" value="Create" class='btn btn-primary' />
 
-			<a href="/Camping/product/index" class='btn btn-secondary'>Cancel</a>
+			<a href="/Camping/profile/index" class='btn btn-secondary'>Cancel</a>
 		</form>
 		
 	</div>
