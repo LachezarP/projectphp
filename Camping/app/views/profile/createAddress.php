@@ -31,7 +31,7 @@
         </div>  
 
         <div class = 'form-group'>
-          <label>Street: <input type="Number" name="street"
+          <label>Street: <input type="text" name="street"
             class = 'form-control'>
           </label>
         </div>  

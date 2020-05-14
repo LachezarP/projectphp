@@ -17,7 +17,9 @@
     <h1>List of Products</h1>
       <a href="/Camping/login/logout">Log out</a>
       
-      <a href="/Camping/home/index" class="btn btn-info" style="float: right;">Camping Spots</a>
+      <a href="/Camping/profile/index" class="btn btn-info" style="float: right; margin: 5px;">Profile</a>
+      <a href="/Camping/camping_spot/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
+
 
       </br>
       </br>

@@ -42,9 +42,18 @@
       <?php
       if($_SESSION['user_id'] != null){
         echo "<a href='/Camping/login/logout'>Log out</a><br/>";
-        echo "<a href='/Camping/product/viewCart/'>My Cart</a><br/>";
+        echo "<a href='/Camping/product/viewCart/'>My Cart</a>";
       }
+      ?>
 
+      <a href="/Camping/profile/index" class="btn btn-info" style="float: right; margin: 5px;">Profile</a>
+      <a href="/Camping/camping_spot/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
+
+      </br>
+      </br>
+      </br>
+
+      <?php
           foreach($data['products'] as $item){
             echo "
             <div class='card'>

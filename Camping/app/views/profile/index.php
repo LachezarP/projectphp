@@ -17,6 +17,7 @@
       <a href="/Camping/login/logout">Log out</a>
       
       <a href="/Camping/home/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
+      <a href="/Camping/product/catalog" class="btn btn-info" style="float: right; margin: 5px;">Products</a>
       
       </br>
       </br>
