@@ -14,6 +14,14 @@
 			return $stmt->fetchAll();
 		}
 
+		public function getAvailable(){
+			$SQL = 'SELECT * FROM Product INNER JOIN inventory ON Product.inventory_id = inventory.inventory_id WHERE availability = "available" ';
+			$stmt = self::$_connection->prepare($SQL);
+			$stmt->execute();
+			$stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');
+			return $stmt->fetchAll();
+		}
+
 		public function create(){
 			$SQL = 'INSERT INTO Product(inventory_id, name, price, description, availability) VALUE(:inventory_id, :name, :price, :description, :availability)';
 			$stmt = self::$_connection->prepare($SQL);
