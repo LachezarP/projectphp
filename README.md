@@ -6,9 +6,9 @@ Adding the database:
 3.	Click on import, then click on Browse.
 4.	Select the archive named “camping.sql.zip” which appears in the Camping folder
 5.	Click on Go 
+
 Add a new database user:
-6.	Go to the home page of phpMyAdmin
- 
+6.	Go to the home page of phpMyAdmin 
 7.	On the right bar, click on User Accounts
 8.	Click on Add User Account
 9.	Complete the form using the following information :
