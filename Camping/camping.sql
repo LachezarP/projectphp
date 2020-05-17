@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2020 at 04:55 AM
--- Server version: 10.1.39-MariaDB
--- PHP Version: 7.3.5
+-- Generation Time: May 18, 2020 at 12:55 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `camping`
 --
+CREATE DATABASE IF NOT EXISTS `camping` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `camping`;
 
 -- --------------------------------------------------------
 
@@ -43,7 +45,7 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`address_id`, `user_id`, `country`, `city`, `street`, `postal_code`, `province`) VALUES
-(1, 2, 'Canada', 'Montreal', 'Rockwell', 'E7H 1H9', 'Quebec');
+(1, 1, 'Canada', 'Montreal', 'Saint-Laurent', 'H5Y7I3', 'Quebec');
 
 -- --------------------------------------------------------
 
@@ -58,13 +60,6 @@ CREATE TABLE `campground` (
   `postal_code` varchar(50) NOT NULL,
   `province` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `campground`
---
-
-INSERT INTO `campground` (`campground_id`, `name`, `street`, `postal_code`, `province`) VALUES
-(1, 'The Original', 'Rockwell', 'E7H 1H9', 'New Brunswick');
 
 -- --------------------------------------------------------
 
@@ -98,15 +93,6 @@ CREATE TABLE `camping_spot` (
   `spot_number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `camping_spot`
---
-
-INSERT INTO `camping_spot` (`camping_spot_id`, `campground_id`, `description`, `image`, `availability`, `price`, `spot_number`) VALUES
-(1, 1, 'The original camping spot used by the prime minister.', 'default.png', 'pending', '100.00', 1),
-(20, 1, 'wqeqe', '5eba221f1918b.jpg', 'occupied', '123.00', 5),
-(21, 1, 'A small spot', 'default.png', 'not occupied', '50.00', 10);
-
 -- --------------------------------------------------------
 
 --
@@ -128,7 +114,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`contact_id`, `user_id`, `address_id`, `first_name`, `last_name`, `phone_number`, `email`) VALUES
-(2, 2, 1, 'tester', 'one', '5145683569', 'tester@hotmail.com');
+(1, 1, 1, 'Jon', 'Doe', '5142323586', 'jon.doe@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -141,13 +127,6 @@ CREATE TABLE `inventory` (
   `qty` int(11) NOT NULL,
   `shelf_location` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `inventory`
---
-
-INSERT INTO `inventory` (`inventory_id`, `qty`, `shelf_location`) VALUES
-(1, 10, 'A1');
 
 -- --------------------------------------------------------
 
@@ -178,14 +157,6 @@ CREATE TABLE `orders` (
   `order_total` decimal(7,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`order_id`, `user_id`, `date`, `order_status`, `order_total`) VALUES
-(1, 2, '2020-05-01', 'cart', '50.00'),
-(2, 2, '2020-05-01', 'shipped', '100.00');
-
 -- --------------------------------------------------------
 
 --
@@ -199,14 +170,6 @@ CREATE TABLE `order_items` (
   `price` decimal(7,2) NOT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `order_items`
---
-
-INSERT INTO `order_items` (`order_items_id`, `product_id`, `order_id`, `price`, `qty`) VALUES
-(1, 9, 1, '50.00', 1),
-(2, 9, 2, '50.00', 2);
 
 -- --------------------------------------------------------
 
@@ -222,13 +185,6 @@ CREATE TABLE `product` (
   `description` text NOT NULL,
   `availability` enum('available','not available') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `product`
---
-
-INSERT INTO `product` (`product_id`, `inventory_id`, `name`, `price`, `description`, `availability`) VALUES
-(9, 1, 'fire wood', '50.00', 'A large amount', 'available');
 
 -- --------------------------------------------------------
 
@@ -263,13 +219,6 @@ CREATE TABLE `request` (
   `timestamp` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `request`
---
-
-INSERT INTO `request` (`request_id`, `camp_spot_id`, `user_id`, `start_date`, `end_date`, `request_status`, `req_read`, `timestamp`) VALUES
-(3, 1, 2, '2020-05-12', '2020-05-14', 'Pending', 'Not Read', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -288,8 +237,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password_hash`, `role`) VALUES
-(1, '1234', '$2y$10$oL8D93y7aJ0mj5KEsQY0QuQMS986EcRIaOqWZZbnKpGfob9zlqlAi', 'employee'),
-(2, '123', '$2y$10$SR8igH/AJcbMqUjHi8zXx.paOFQ1OTdf8Cs0M9AeEK3ki.ryxt8ZS', 'user');
+(1, 'admin', '$2y$10$95VeIkw0LNdfJdG8j/gGj.tdFVB5mFR6v5jClfsztQ4xcsjxZVodO', 'employee');
 
 --
 -- Indexes for dumped tables
@@ -405,7 +353,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `campground`
 --
 ALTER TABLE `campground`
-  MODIFY `campground_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `campground_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `camping_review`
@@ -417,19 +365,19 @@ ALTER TABLE `camping_review`
 -- AUTO_INCREMENT for table `camping_spot`
 --
 ALTER TABLE `camping_spot`
-  MODIFY `camping_spot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `camping_spot_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `message`
@@ -441,19 +389,19 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_items_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_items_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product_review`
@@ -465,13 +413,13 @@ ALTER TABLE `product_review`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

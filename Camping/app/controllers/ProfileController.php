@@ -5,6 +5,12 @@
 				if($theUser != null){
 						$profiles = $this->model('Profile')->get();
 						$this->view('profile/index', ['profiles'=>$profiles]);
+						if(isset($_POST['action'])){
+							$theUser = $this->model('User')->findUser($_POST['username']);
+							$theUser->role = 'employee';
+							$theUser->update();
+						}
+
 				}
 				else{
 					header('location:/Camping/profile/createAddress');

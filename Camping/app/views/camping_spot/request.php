@@ -12,7 +12,8 @@
     <title>New Request</title>
   </head>
   <body>
-    <div class='container'>
+   <div style="background-image: url('../../images/background.jpg');height: 1000px;">
+    <div class='container' style="height: 1000px; background-color: white;">
     	<h1>New Request</h1>
       
 	    <form action='' method="post" >
@@ -45,6 +46,7 @@
 		</form>
 		
 	</div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

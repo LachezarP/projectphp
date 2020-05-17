@@ -12,7 +12,8 @@
     <title>My cart</title>
   </head>
   <body>
-  	<div class='container'>
+  <div style="background-image: url('../../images/camp2.jpg');height: 1000px;">
+    <div class='container' style="height: 1000px; background-color: white;">
     <h1>My cart</h1>
       
       <a href="/Camping/product/catalog" class="btn btn-info">Back to the catalog</a>
@@ -33,6 +34,7 @@
         <tr><th colspan="3">Subtotal</th><th><?= $sum ?></th><th><a href = '/Camping/product/checkout/' class='btn btn-success'>Checkout my cart</a></th></tr>
 	</table>
     </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

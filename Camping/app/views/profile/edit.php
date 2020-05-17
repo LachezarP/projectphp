@@ -14,7 +14,7 @@
   <body>
     <div style="background-image: url('../../images/camp8.jpg');height: 1000px;">
     <div class='container' style="height: 1000px; background-color: white;">
-    <h1> Edit a Product</h1>
+    <h1> Edit a Contact</h1>
 
     	<form action='' method="post">
 

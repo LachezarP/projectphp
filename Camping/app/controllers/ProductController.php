@@ -95,7 +95,7 @@
 			$cart->update();
 			$newItem->create();
 
-			header('location:/Camping/product/catalog/');
+			header('location:/Camping/product/catalog');
 		}
 
 		public function viewCart(){
@@ -127,7 +127,7 @@
 			if($order->user_id == $_SESSION['user_id']) {
 				$item->delete();
 			}
-			header('location:/Camping/product/viewCart');
+			header('location:/Camping/product/viewCart/');
 		}
 
 		public function checkout(){

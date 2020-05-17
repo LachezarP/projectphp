@@ -12,9 +12,10 @@
     <title>List of Requests</title>
   </head>
   <body>
-  	<div class='container'>
+   <div style="background-image: url('../images/background.jpg');height: 1000px;">
+    <div class='container' style="height: 1000px; background-color: white;">
     <h1>List of Requests</h1>
-      <a href="/Camping/login/logout">Log out</a>
+      <a href="/Camping/login/logout" class="btn btn-info">Log out</a>
       
       <a href="/Camping/home/index" class="btn btn-info" style="float: right;">Camping Spots</a>
 
@@ -39,6 +40,7 @@
         ?>
 	</table>
     </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
