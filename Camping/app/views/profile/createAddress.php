@@ -12,7 +12,7 @@
   </head>
 
   <body>
-  <div style="background-image: url('../images/camp6.jpg');height: 1000px;">
+  <div style="background-image: url('../../images/camp6.jpg');height: 1000px;">
     <div class='container' style="height: 1000px; background-color: white;">
     	<h1>Create a Address</h1>
       
