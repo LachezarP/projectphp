@@ -12,8 +12,8 @@ Add a new database user:
 2.	On the right bar, click on User Accounts
 3.	Click on Add User Account
 4.	Complete the form using the following information :
--	Username : camping_user
--	Hostname: localhost
--	Password: tjAOLl7NQlvOtES9
+  * Username : camping_user
+  *	Hostname: localhost
+  *	Password: tjAOLl7NQlvOtES9
 5.	Check the “Global Privileges Check All”
 6.	Click on Go
