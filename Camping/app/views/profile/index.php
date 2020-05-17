@@ -15,10 +15,20 @@
     <div style="background-image: url('../images/camp8.jpg');height: 1000px;">
     <div class='container' style="height: 1000px; background-color: white;">
     <h1>Profile</h1>
-      <a href="/Camping/login/logout">Log out</a>
-      
-      <a href="/Camping/home/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
-      <a href="/Camping/product/catalog" class="btn btn-info" style="float: right; margin: 5px;">Products</a>
+      <a href="/Camping/login/logout" class="btn btn-info">Log out</a>
+      <div>
+        <?php
+          if($_SESSION['role'] == "employee"){
+            echo "<a href='/Camping/contact/index' class='btn btn-info' style='float: right; margin: 5px;'>Contacts</a>
+                  <a href='/Camping/product/index' class='btn btn-info' style='float: right; margin: 5px;'>Products</a>";
+          }
+          else{
+            echo "<a href='/Camping/product/catalog' class='btn btn-info' style='float: right; margin: 5px;'>Products</a>";
+            }
+        ?>
+          <a href="/Camping/home/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
+      </div> 
+
       
       </br>
       </br>
@@ -35,6 +45,17 @@
           }
         ?>
   </table>
+      <div>
+        <?php
+          if($_SESSION['role'] == "employee"){
+            echo "<h3>Settings :</h3>";
+            echo "<form action='' method='post'>
+                  <div class = 'form-group'>
+                  <label>Change role of a user to employee: <input type='text' name='username' class = 'form-control'>
+                  </label> <input type='submit' name='action' value='Change' class='btn btn-primary'/></div>";
+          }
+        ?>
+      </div> 
     </div>
   </div>
 

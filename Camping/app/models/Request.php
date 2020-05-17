@@ -9,7 +9,7 @@
 		var $timestamp;
 
 		public function get(){
-			$SQL = 'SELECT * FROM Request JOIN user ON Request.user_id = user.user_id JOIN contact ON user.user_id = user.user_id JOIN Camping_spot ON Request.camp_spot_id = Camping_spot.camping_spot_id';
+			$SQL = 'SELECT * FROM Request JOIN user ON Request.user_id = user.user_id JOIN contact ON user.user_id = contact.user_id JOIN Camping_spot ON Request.camp_spot_id = Camping_spot.camping_spot_id';
 			$stmt = self::$_connection->prepare($SQL);
 			$stmt->execute();
 			$stmt->setFetchMode(PDO::FETCH_CLASS, 'Request');

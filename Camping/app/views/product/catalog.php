@@ -41,8 +41,8 @@
 
       <?php
       if($_SESSION['user_id'] != null){
-        echo "<a href='/Camping/login/logout'>Log out</a><br/>";
-        echo "<a href='/Camping/product/viewCart/'>My Cart</a>";
+        echo "<a href='/Camping/login/logout' class= 'btn btn-info' >Log out</a>
+              <a href='/Camping/product/viewCart/' class= 'btn btn-info'> My Cart</a>";
       }
       ?>
 

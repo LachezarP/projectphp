@@ -20,7 +20,7 @@
     <div style="background-image: url('../images/background.jpg');height: 1000px;">
   	<div class='container' style="background-color: white; align-content: center;height: 1000px">
     <h1>List of Camping Spots</h1>
-      <a href="/Camping/login/logout">Log out</a>
+      <a href="/Camping/login/logout" class= "btn btn-info">Log out</a>
 
       <a href="/Camping/profile/index" class="btn btn-info" style="float: right; margin: 5px;">Profile</a>
       <a href="/Camping/product/catalog" class="btn btn-info" style="float: right; margin: 5px">Products</a>

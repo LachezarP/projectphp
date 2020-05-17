@@ -15,7 +15,7 @@
   	<div class='container'>
     <h1>My cart</h1>
       
-      <a href="/Camping/product/catalog">Back to the catalog</a>
+      <a href="/Camping/product/catalog" class="btn btn-info">Back to the catalog</a>
 
 			<table class="table table-striped">
 				<tr><th>Name</th><th>Quantity</th><th>Unit Price</th><th>Total Price</th><th>Actions</th></tr>

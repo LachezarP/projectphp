@@ -15,7 +15,7 @@
   	 <div style="background-image: url('../images/camp8.jpg');height: 1000px;">
     <div class='container' style="height: 1000px; background-color: white; ">
     <h1>Sales</h1>
-      <a href="/Camping/login/logout">Log out</a>
+      <a href="/Camping/login/logout" class= "btn btn-info">Log out</a>
       
       <a href="/Camping/home/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
       <a href="/Camping/orders/index" class="btn btn-info" style="float: right; margin: 5px;">Orders</a>

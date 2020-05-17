@@ -15,7 +15,7 @@
     <div class='container'>
     	<h1>New Request</h1>
       
-	    <form action='' method="post" '>
+	    <form action='' method="post" >
 
 	    	<div class = 'form-group'>
           <label>Start Date: <input type="date" name="start_date"

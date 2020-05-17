@@ -15,7 +15,7 @@
     <div style="background-image: url('../images/camp6.jpg');height: 1000px;">
   	<div class='container' style="height: 1000px; background-color: white;">
     <h1>List of Products</h1>
-      <a href="/Camping/login/logout">Log out</a>
+      <a href="/Camping/login/logout" class="btn btn-info">Log out</a>
       
       <a href="/Camping/profile/index" class="btn btn-info" style="float: right; margin: 5px;">Profile</a>
       <a href="/Camping/camping_spot/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
@@ -41,6 +41,7 @@
           }
         ?>
 	</table>
+    <a href="/Camping/profile/index" class="btn btn-secondary">Back</a>
     </div>
 
     <!-- Optional JavaScript -->

@@ -12,7 +12,8 @@
     <title>Edit an Item</title>
   </head>
   <body>
-  	<div class='container'>
+   <div style="background-image: url('../../images/camp4.jpg');height: 1000px;">
+    <div class='container' style="height: 1000px; background-color: white;">
     <h1> Edit an item</h1>
 
       <?php
@@ -81,6 +82,7 @@
 	</form>
 	
     </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

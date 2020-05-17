@@ -12,7 +12,9 @@
     <title>Camping Spot Details</title>
   </head>
   <body>
-  	<div class='container'>
+   <div style="background-image: url('../../images/camp4.jpg');height: 1000px;">
+    <div class='container' style="height: 1000px; background-color: white;">
+
     <h1>Camping Spot Details</h1>
     	<dl>
 
@@ -36,7 +38,7 @@
     </dl>
 		<a href="/Camping/home/index" class="btn btn-secondary">Back to list</a>
     </div>
-
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

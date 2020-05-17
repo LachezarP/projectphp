@@ -14,7 +14,7 @@
   <body>
     <div class='container'>
     <h1>List of Contacts</h1>
-      <a href="/Camping/login/logout">Log out</a>
+      <a href="/Camping/login/logout" class="btn btn-info">Log out</a>
       
       <a href="/Camping/home/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
       
@@ -32,6 +32,8 @@
           }
         ?>
   </table>
+
+    <a href="/Camping/profile/index" class="btn btn-secondary">Back</a>
     </div>
 
     <!-- Optional JavaScript -->
