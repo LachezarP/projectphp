@@ -49,10 +49,48 @@
 
 				var_dump($addressid);
 				header('location:/Camping/profile/create/' . $addressid);
-				// $this->view('profile/create', $newAddress->address_id);
 			}
 			else{
 				$this->view('profile/createAddress');
+			}
+		}
+
+		public function edit($user_id){
+			$theContact = $this->model('Profile')->findUser($user_id);
+
+			if(isset($_POST['action'])){
+				$theContact->user_id = $_SESSION['user_id'];
+				$theContact->first_name = $_POST['first_name'];
+				$theContact->last_name = $_POST['last_name'];
+				$theContact->phone_number = $_POST['phone_number'];
+				$theContact->email = $_POST['email'];
+
+				$theContact->update();
+
+				header('location:/Camping/profile/index');
+			}
+			else{
+				$this->view('profile/edit', $theContact);
+			}
+		}
+
+		public function editAddress($user_id){
+			$theAddress = $this->model('Profile')->findUser($user_id);
+
+			if(isset($_POST['action'])){
+				$theAddress->user_id = $_SESSION['user_id'];
+				$theAddress->country = $_POST['country'];
+				$theAddress->city = $_POST['city'];
+				$theAddress->street = $_POST['street'];
+				$theAddress->postal_code = $_POST['postal_code'];
+				$theAddress->province = $_POST['province'];
+
+				$theAddress->updateAddress();
+
+				header('location:/Camping/profile/index');
+			}
+			else{
+				$this->view('profile/editAddress', $theAddress);
 			}
 		}
 

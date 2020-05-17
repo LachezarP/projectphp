@@ -49,6 +49,19 @@
 			$stmt->execute(['user_id'=>$this->user_id,'country'=>$this->country,'city'=>$this->city,'street'=>$this->street,'postal_code'=>$this->postal_code,'province'=>$this->province]);
 			return $this->address_id = self::$_connection->lastInsertId();
 		}
+		public function update(){
+			$SQL = 'UPDATE Contact SET user_id = :user_id, first_name = :first_name, last_name = :last_name, phone_number= :phone_number, email = :email WHERE user_id = :user_id';
+			$stmt = self::$_connection->prepare($SQL);
+			$stmt->execute(['user_id'=>$this->user_id,'first_name'=>$this->first_name,'last_name'=>$this->last_name,'phone_number'=>$this->phone_number,'email'=>$this->email]);
+			return $stmt->rowCount();
+		}
+
+		public function updateAddress(){
+			$SQL = 'UPDATE Address SET user_id = :user_id, country = :country, city = :city, street= :street, postal_code = :postal_code, province = :province WHERE user_id = :user_id';
+			$stmt = self::$_connection->prepare($SQL);
+			$stmt->execute(['user_id'=>$this->user_id,'country'=>$this->country,'city'=>$this->city,'street'=>$this->street,'postal_code'=>$this->postal_code ,'province'=>$this->province]);
+			return $stmt->rowCount();
+		}
 	}
 
 ?>

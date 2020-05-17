@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -9,34 +8,53 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>List of Contacts</title>
+    <title>Edit an Address</title>
   </head>
+
   <body>
-    <div style="background-image: url('../images/camp8.jpg');height: 1000px;">
+  <div style="background-image: url('../images/camp8.jpg');height: 1000px;">
     <div class='container' style="height: 1000px; background-color: white;">
-    <h1>Profile</h1>
-      <a href="/Camping/login/logout">Log out</a>
+    	<h1>Edit an Address</h1>
       
-      <a href="/Camping/home/index" class="btn btn-info" style="float: right; margin: 5px;">Camping Spots</a>
-      <a href="/Camping/product/catalog" class="btn btn-info" style="float: right; margin: 5px;">Products</a>
-      
-      </br>
-      </br>
+	    <form action='' method="post">
 
-      <table class="table table-striped">
-        <tr><td>Username</td><td>First Name</td><td>Last Name</td><td>Phone Number</td><td>Email</td><td>Actions</td></tr>
-         <?php
+	    	<div class = 'form-group'>
+          <label>Country: <input type="text" name="country"
+            class = 'form-control'>
+          </label>
+        </div>
 
-          foreach($data['profiles'] as $item){
-            echo "<tr><td>$item->username</td><td>$item->first_name</td><td>$item->last_name</td><td>$item->phone_number</td><td>$item->email</td><td>
-            <a href = '/Camping/profile/profile_info/{$_SESSION['user_id']}' class='btn btn-primary'>Detail</a>
-            <a href = '/Camping/profile/edit/{$_SESSION['user_id']}' class='btn btn-success'>Edit</a>
-            </td></tr>";
-          }
-        ?>
-  </table>
-    </div>
-  </div>
+        <div class = 'form-group'>
+          <label>City: <input type="text" name="city"
+            class = 'form-control'>
+          </label>
+        </div>  
+
+        <div class = 'form-group'>
+          <label>Street: <input type="text" name="street"
+            class = 'form-control'>
+          </label>
+        </div>  
+
+        <div class = 'form-group'>
+          <label>Postal code: <input type="text" name="postal_code"
+            class = 'form-control'>
+          </label>
+        </div> 
+
+        <div class = 'form-group'>
+          <label>Province: <input type="text" name="province"
+            class = 'form-control'>
+          </label>
+        </div> 
+
+			<input type="submit" name="action" value="Create" class='btn btn-primary' />
+
+			<a href="/Camping/profile/index" class='btn btn-secondary'>Cancel</a>
+		</form>
+		
+	</div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

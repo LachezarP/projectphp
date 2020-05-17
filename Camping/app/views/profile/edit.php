@@ -9,49 +9,48 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Contact Details</title>
+    <title>Edit a Contact</title>
   </head>
   <body>
     <div style="background-image: url('../../images/camp8.jpg');height: 1000px;">
-  	<div class='container' style="height: 1000px; background-color: white;">
-    <h1>Contact Details</h1>
-    	<dl>
+    <div class='container' style="height: 1000px; background-color: white;">
+    <h1> Edit a Product</h1>
 
-		<dt>Username:</dt>
-	    <dd><?=$data->username ?></dd>
+    	<form action='' method="post">
 
-        <dt>First Name:</dt>
-        <dd><?=$data->first_name ?></dd>
 
-        <dt>Last Name:</dt>
-        <dd><?=$data->last_name ?></dd>
-		
-        <dt>Phone Number:</dt>
-        <dd><?=$data->phone_number ?></dd>
+        <div class = 'form-group'>
+          <label>First Name: <input type="text" name="first_name"
+            class = 'form-control'>
+          </label>
+        </div>
 
-        <dt>Email:</dt>
-        <dd><?=$data->email ?></dd>
+        <div class = 'form-group'>
+          <label>Last Name: <input type="text" name="last_name"
+            class = 'form-control'>
+          </label>
+        </div>  
 
-        <dt>Country:</dt>
-        <dd><?=$data->country ?></dd>
+        <div class = 'form-group'>
+          <label>Phone Number: <input type="Number" name="phone_number"
+            class = 'form-control'>
+          </label>
+        </div>  
 
-        <dt>City:</dt>
-        <dd><?=$data->city ?></dd>
+        <div class = 'form-group'>
+          <label>Email: <input type="text" name="email"
+            class = 'form-control'>
+          </label>
+        </div> 
 
-        <dt>Street:</dt>
-        <dd><?=$data->street ?></dd>
 
-        <dt>Postal Code:</dt>
-        <dd><?=$data->postal_code ?></dd>
-
-        <dt>province:</dt>
-        <dd><?=$data->province ?></dd>
-    </dl>
-		<a href="/Camping/profile/index" class="btn btn-secondary">Back to list</a>
-        <?php
-        echo "<a href = '/Camping/profile/editAddress/{$_SESSION['user_id']}' class='btn btn-success'>Edit</a>"
-        ?>
+    <input type="submit" name="action" value="Save Changes" class="btn btn-success" />
+    
+    <a href="/Camping/profile/index" class="btn btn-secondary">Cancel</a>
+	</form>
+	
     </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
