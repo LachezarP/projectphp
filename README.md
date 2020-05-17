@@ -8,12 +8,12 @@ Adding the database:
 5.	Click on Go 
 
 Add a new database user:
-6.	Go to the home page of phpMyAdmin 
-7.	On the right bar, click on User Accounts
-8.	Click on Add User Account
-9.	Complete the form using the following information :
+1.	Go to the home page of phpMyAdmin 
+2.	On the right bar, click on User Accounts
+3.	Click on Add User Account
+4.	Complete the form using the following information :
 -	Username : camping_user
 -	Hostname: localhost
 -	Password: tjAOLl7NQlvOtES9
-10.	Check the “Global Privileges Check All”
-11.	Click on Go
+5.	Check the “Global Privileges Check All”
+6.	Click on Go
