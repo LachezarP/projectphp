@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2020 at 12:55 AM
+-- Generation Time: May 18, 2020 at 02:29 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -45,7 +45,7 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`address_id`, `user_id`, `country`, `city`, `street`, `postal_code`, `province`) VALUES
-(1, 1, 'Canada', 'Montreal', 'Saint-Laurent', 'H5Y7I3', 'Quebec');
+(1, 1, 'America', 'New york', 'John Street', 'y78u3y', 'New York');
 
 -- --------------------------------------------------------
 
@@ -60,6 +60,15 @@ CREATE TABLE `campground` (
   `postal_code` varchar(50) NOT NULL,
   `province` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `campground`
+--
+
+INSERT INTO `campground` (`campground_id`, `name`, `street`, `postal_code`, `province`) VALUES
+(1, 'Camp Steen', 'John Street', 'H6T8U6', 'Quebec'),
+(2, 'Nova Camp', 'Saint Luise', 'H6U8Y9', 'Ontario'),
+(3, 'Groove Camp', 'Captain Jack St', 'I9O0Y7', 'Manitoba');
 
 -- --------------------------------------------------------
 
@@ -114,7 +123,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`contact_id`, `user_id`, `address_id`, `first_name`, `last_name`, `phone_number`, `email`) VALUES
-(1, 1, 1, 'Jon', 'Doe', '5142323586', 'jon.doe@gmail.com');
+(1, 1, 1, 'Jack', 'Russel', '5147679898', 'jack23@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -127,6 +136,15 @@ CREATE TABLE `inventory` (
   `qty` int(11) NOT NULL,
   `shelf_location` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `inventory`
+--
+
+INSERT INTO `inventory` (`inventory_id`, `qty`, `shelf_location`) VALUES
+(1, 20, '30'),
+(2, 30, '21'),
+(3, 45, '57');
 
 -- --------------------------------------------------------
 
@@ -185,6 +203,14 @@ CREATE TABLE `product` (
   `description` text NOT NULL,
   `availability` enum('available','not available') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `inventory_id`, `name`, `price`, `description`, `availability`) VALUES
+(2, 1, 'Apple', '40.00', 'Apple from California', 'available'),
+(3, 1, 'Pear', '65.00', 'Pear from California', 'available');
 
 -- --------------------------------------------------------
 
@@ -306,6 +332,7 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `order_items`
   ADD PRIMARY KEY (`order_items_id`),
+  ADD UNIQUE KEY `product_id` (`product_id`,`order_id`),
   ADD KEY `order_items_to_orders` (`order_id`),
   ADD KEY `order_items_to_product` (`product_id`);
 
@@ -347,13 +374,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `campground`
 --
 ALTER TABLE `campground`
-  MODIFY `campground_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `campground_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `camping_review`
@@ -365,19 +392,19 @@ ALTER TABLE `camping_review`
 -- AUTO_INCREMENT for table `camping_spot`
 --
 ALTER TABLE `camping_spot`
-  MODIFY `camping_spot_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `camping_spot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `message`
@@ -389,19 +416,19 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_items_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_items_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product_review`
@@ -413,13 +440,13 @@ ALTER TABLE `product_review`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
